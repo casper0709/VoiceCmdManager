@@ -1,0 +1,12 @@
+﻿{
+	"channelName": "VideoPlayer",
+	"cmdPipeName": "VoiceCmdManager.VideoPlayer.cmd",
+	"ctrlPipeName": "VoiceCmdManager.VideoPlayer.ctrl",
+	"grammars": [{
+		"type": "main",
+		"patterns": ["next", "previous", "go"]
+	}, {
+		"type": "videoplay",
+		"patterns": ["play", "pause", "stop", "forward", "backward"]
+	}]
+}

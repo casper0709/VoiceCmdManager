@@ -1,0 +1,9 @@
+﻿{
+	"channelName": "VRDevice",
+	"cmdPipeName": "VoiceCmdManager.VRDevice.cmd",
+	"ctrlPipeName": "VoiceCmdManager.VRDevice.ctrl",
+	"grammars": [{
+		"type": "teleport",
+		"patterns": ["gallery", "news", "scene"]
+	}]
+}

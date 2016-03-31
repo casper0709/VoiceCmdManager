@@ -1,0 +1,33 @@
+﻿[
+  {
+    "channelName": "VideoPlayer",
+    "cmdPipeName": "VoiceCmdManager.VideoPlayer.cmd",
+    "ctrlPipeName": "VoiceCmdManager.VideoPlayer.ctrl",
+    "grammars": [
+      {
+        "confidence": 0.5,
+        "startWord": "video",
+        "type": "main",
+        "patterns": [ "play", "next", "previous", "go" ]
+      },
+      {
+        "confidence": 0.5,
+        "startWord": "video",
+        "type": "videoplay",
+        "patterns": [ "play", "pause", "stop", "forward", "backward" ]
+      }
+    ]
+  },
+  {
+    "channelName": "VRDevice",
+    "cmdPipeName": "VoiceCmdManager.VRDevice.cmd",
+    "ctrlPipeName": "VoiceCmdManager.VRDevice.ctrl",
+    "grammars": [
+      {
+        "confidence": 0.5,
+        "startWord": "virtual reality",
+        "type": "teleport",
+        "patterns": [ "play", "gallery", "news", "scene" ]
+      }
+    ]
+  }]
