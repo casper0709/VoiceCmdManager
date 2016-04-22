@@ -5,11 +5,67 @@ The program is a stand alone program that serves as listener to collect all comm
 
 ### Architecture
 The program is composed by 2 major parts
-- Voice Recognizer: build with .NET Speech Recognition library
-- Named Pipe Manager: used to communicate with registered applications
+- VoiceCmdRecognizer: build with .NET Speech Recognition library
+- NamedPipeEventManager: used to communicate with registered applications
+
+### Configuration
+
+- Configuration sample for VoiceCmdManager
+
+```sh
+[
+  {
+    "channelName": "VideoPlayer",
+    "cmdPipeName": "VoiceCmdManager.VideoPlayer.cmd",
+    "ctrlPipeName": "VoiceCmdManager.VideoPlayer.ctrl",
+    "grammars": [
+      {
+        "confidence": 0.5,
+        "startWord": "video",
+        "type": "main",
+        "patterns": [ "play", "next", "previous", "go" ]
+      },
+      {
+        "confidence": 0.5,
+        "startWord": "video",
+        "type": "videoplay",
+        "patterns": [ "play", "pause", "stop", "forward", "backward" ]
+      }
+    ]
+  },
+  {
+    "channelName": "VRDevice",
+    "cmdPipeName": "VoiceCmdManager.VRDevice.cmd",
+    "ctrlPipeName": "VoiceCmdManager.VRDevice.ctrl",
+    "grammars": [
+      {
+        "confidence": 0.5,
+        "startWord": "virtual reality",
+        "type": "teleport",
+        "patterns": [ "play", "gallery", "news", "scene" ]
+      }
+    ]
+  }]
+```
+
+- Configuration sample for client
+```sh
+{
+	"channelName": "VideoPlayer",
+	"cmdPipeName": "VoiceCmdManager.VideoPlayer.cmd",
+	"ctrlPipeName": "VoiceCmdManager.VideoPlayer.ctrl",
+	"grammars": [{
+		"type": "main",
+		"patterns": ["next", "previous", "go"]
+	}, {
+		"type": "videoplay",
+		"patterns": ["play", "pause", "stop", "forward", "backward"]
+	}]
+}
+```
 
 ### Usage
 
 
-### Configuration
+
 
